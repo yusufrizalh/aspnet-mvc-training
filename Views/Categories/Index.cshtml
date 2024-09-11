@@ -1,5 +1,6 @@
 ﻿@using MyProject.Models
 @model List<Category>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 @section pagetitle {
     Categories Page
@@ -7,9 +8,39 @@
 
 <h3>Categories Page</h3>
 <hr />
-<ul>
-    @foreach (var category in Model)
-    {
-        <li>@category.CategoryName</li>
-    }
-</ul>
+
+@if (Model != null && Model.Count > 0)
+{
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr class="table-dark">
+                <th>Category Name</th>
+                <th>Description</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var category in Model)
+            {
+                <tr>
+                    <td>@category.CategoryName</td>
+                    <td>@category.CategoryDescription</td>
+                    <td>
+                        <a class="btn btn-link text-primary text-decoration-none"
+                           asp-controller="categories"
+                           asp-action="show"
+                           asp-route-id="@category.CategoryId">
+                            Edit
+                        </a>
+                    </td>
+                    <td>
+                        <a class="btn btn-link text-danger text-decoration-none">
+                            Delete
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
