@@ -7,6 +7,7 @@
             new Category{CategoryId=1, CategoryName="Beverages", CategoryDescription="Beverages"},
             new Category{CategoryId=2, CategoryName="Meals", CategoryDescription="Meals"},
             new Category{CategoryId=3, CategoryName="Fruits", CategoryDescription="Fruits"},
+            new Category{CategoryId=4, CategoryName="Meats", CategoryDescription="Meats"},
         };
 
         // CREATE CATEGORY

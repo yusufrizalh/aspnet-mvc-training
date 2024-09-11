@@ -7,7 +7,8 @@ namespace MyProject.Controllers
     {
         public IActionResult Index()
         {
-            return View();
+            var categories = CategoriesRepository.GetAllCategories();
+            return View(categories);
         }
 
         public IActionResult Show(int? id)
