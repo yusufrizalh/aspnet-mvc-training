@@ -26,3 +26,4 @@ C:\Users\User\source\repos\MyProject\MyProject\obj\Debug\net8.0\ref\MyProject.dl
 C:\Users\User\source\repos\MyProject\MyProject\obj\Debug\net8.0\MyProject.RazorAssemblyInfo.cache
 C:\Users\User\source\repos\MyProject\MyProject\obj\Debug\net8.0\MyProject.RazorAssemblyInfo.cs
 C:\Users\User\source\repos\MyProject\MyProject\bin\Debug\net8.0\MyProject.staticwebassets.runtime.json
+C:\Users\User\source\repos\MyProject\MyProject\obj\Debug\net8.0\MyProject.sourcelink.json
