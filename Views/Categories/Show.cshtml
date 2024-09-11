@@ -4,5 +4,40 @@
     Category Show
 }
 
-<h3>Category ID: @Model.CategoryId</h3>
+@if (Model != null)
+{
+    <h3>Category: @Model.CategoryName</h3>
+}
+@if (Model == null)
+{
+    <h3>Category: Not Found</h3>
+}
+
 <hr />
+
+<form method="post" asp-controller="categories" asp-action="show">
+    <input type="hidden" asp-for="CategoryId" />
+    <div class="row mb-3">
+        <div class="col-md-4">
+            <label asp-for="CategoryName" class="fw-bold col-form-label"></label>
+        </div>
+        <div class="col-md-6">
+            <input type="text" class="form-control" asp-for="CategoryName" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-md-4">
+            <label asp-for="CategoryDescription" class="fw-bold col-form-label"></label>
+        </div>
+        <div class="col-md-6">
+            <input type="text" class="form-control" asp-for="CategoryDescription" />
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-md-4">
+            <input type="submit" class="btn btn-primary" value="Update" />
+        </div>
+        <div class="col-md-6">
+        </div>
+    </div>
+</form>

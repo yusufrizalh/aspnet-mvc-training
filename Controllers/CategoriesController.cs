@@ -11,13 +11,20 @@ namespace MyProject.Controllers
             return View(categories);
         }
 
+        [HttpGet]
         public IActionResult Show(int? id)
         {
-            var category = new Category
-            {
-                CategoryId = id.HasValue ? id.Value : 0
-            };
+            var category = CategoriesRepository.GetCategoryById(
+                id.HasValue ? id.Value : 0);
             return View(category);
+        }
+
+        [HttpPost]
+        public IActionResult Show(Category category)
+        {
+            CategoriesRepository.UpdateCategory(
+                category.CategoryId, category);
+            return RedirectToAction(nameof(Index));
         }
     }
 }
