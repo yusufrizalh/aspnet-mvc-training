@@ -22,9 +22,13 @@ namespace MyProject.Controllers
         [HttpPost]
         public IActionResult Show(Category category)
         {
-            CategoriesRepository.UpdateCategory(
+            if (ModelState.IsValid)
+            {
+                CategoriesRepository.UpdateCategory(
                 category.CategoryId, category);
-            return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Index));
+            }
+            return View(category);
         }
     }
 }
